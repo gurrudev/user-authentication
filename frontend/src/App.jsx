@@ -11,7 +11,7 @@ import ResetPassword from "./pages/ResetPassword";
 function AppContent() {
     return (
         <div className="h-screen w-full bg-gray-100">
-            <UserProvider>
+            <UserProvider >
                 <Routes>
                     <Route path="/" element={<Login />} />
                     <Route path="/register" element={<Register />} />

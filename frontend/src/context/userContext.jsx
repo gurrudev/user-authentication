@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useMemo } from "react";
 import { UserData } from "../api/endpoints";
 
 const UserContext = createContext();
@@ -27,8 +27,13 @@ export const UserProvider = ({ children }) => {
         fetchUserData();
     }, [token]);
 
+    const contextValue = useMemo(
+        () => ({ user, setUser, isLoading }),
+        [user, isLoading]
+    );
+
     return (
-        <UserContext.Provider value={{ user, setUser, isLoading }}>
+        <UserContext.Provider value={contextValue}>
             {children}
         </UserContext.Provider>
     );
