@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 // MongoDB Configuration
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_CRED = process.env.MONGO_CRED;
 
 // JWT Configuration
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY; 
@@ -17,7 +17,7 @@ const MAILER_PASSWORD = process.env.MAILER_PASSWORD;
 const FRONTEND_URL = process.env.FRONTEND_URL;
 
 module.exports = {
-    MONGO_URI,
+    MONGO_CRED,
     JWT_SECRET_KEY,
     JWT_USER_LOGIN_EXPIRY,
     JWT_PASSWORD_RESET_TOKEN_EXPIRY,

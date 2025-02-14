@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { MONGO_URI } = require("./config/env");
+const { MONGO_CRED } = require("./config/env");
 const { dbConnect } = require("./config/dbConfig");
 const userRouter = require("./router/user.routes");
 
@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-dbConnect(MONGO_URI);
+dbConnect(MONGO_CRED);
 
 app.use("/api/users", userRouter);
 

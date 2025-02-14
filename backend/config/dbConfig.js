@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
-const dbConnect = (MONGO_URI) => {
+const dbConnect = (MONGO_CRED) => {
     mongoose
-        .connect(MONGO_URI)
+        .connect(
+            `mongodb+srv://${MONGO_CRED}@cluster0.i028f.mongodb.net/user-authentication`
+        )
         .then(() => {
             console.log("DB Connected :)");
         })
