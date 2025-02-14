@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import UserContext from "../context/userContext";
@@ -7,7 +7,14 @@ import ProfileCardSkeleton from "../components/ProfileCardSkeleton";
 const Home = () => {
     const token = localStorage.getItem("token");
     const navigate = useNavigate();
-    const { user, isLoading } = useContext(UserContext);
+    const [isLoading, setIsLoading] = useState(true);
+    const { user } = useContext(UserContext);
+
+    useEffect(() => {
+        if (user) {
+            setIsLoading(false);
+        }
+    }, [user]);
 
     useEffect(() => {
         if (!token) {

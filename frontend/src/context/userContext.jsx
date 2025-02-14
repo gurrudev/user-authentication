@@ -18,11 +18,10 @@ export const UserProvider = ({ children }) => {
             try {
                 const res = await UserData(token);
                 setUser(res.user);
+                setIsLoading(false);
             } catch (error) {
                 console.error("Error fetching user data:", error);
-            } finally {
-                setIsLoading(false);
-            }
+            } 
         };
         fetchUserData();
     }, [token]);
