@@ -201,6 +201,7 @@ const Register = () => {
                                 <input
                                     type="file"
                                     name="avatar"
+                                    accept="image/jpeg, image/png, image/jpg"
                                     onChange={(e) =>
                                         setFieldValue(
                                             "avatar",
