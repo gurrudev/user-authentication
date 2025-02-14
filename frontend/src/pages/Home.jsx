@@ -10,13 +10,11 @@ import ProfileCardSkeleton from "../components/ProfileCardSkeleton";
 const Home = () => {
     const [data, setData] = useState(null);
     const token = localStorage.getItem("token");
-    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
-    const { user, setUser } = useContext(UserContext);
+    const { user, setUser, isLoading } = useContext(UserContext);
 
     const memoizedUser = useMemo(() => user, [user]);
 
-    // console.log(user);
     useEffect(() => {
         if (!token) {
             navigate("/");
@@ -25,7 +23,6 @@ const Home = () => {
         const fetchData = async () => {
             const res = await UserData(token);
             setUser(res.user);
-            setIsLoading(false);
             if (res.message === "Invalid token") {
                 navigate("/");
             } else {
@@ -37,7 +34,7 @@ const Home = () => {
 
     return (
         <>
-            <Navbar user={memoizedUser && memoizedUser.firstName} />
+            <Navbar user={isLoading ? "" : memoizedUser && memoizedUser.firstName} />
             <div className="max-w-sm mx-auto bg-white rounded-xl mt-20 shadow-md overflow-hidden border border-gray-200">
                 {isLoading ? (
                     <ProfileCardSkeleton />
