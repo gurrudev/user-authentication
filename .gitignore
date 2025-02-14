@@ -1,6 +1,6 @@
-node_module
-backend/node_module
+node_modules
+backend/node_modules
 backend/.env
-frontend/node_module
+frontend/node_modules
 frontend/.env
 .vscode
