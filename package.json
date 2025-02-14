@@ -1,0 +1,20 @@
+{
+  "name": "costumer-feedback",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev-frontend": "cd frontend && npm run dev",
+    "dev-backend": "cd backend && npm run dev",
+    "dev": "concurrently -n \"FRONTEND,BACKEND\" -c \"bgBlue,bgYellow\" -p \"{name}\" \"npm run dev-frontend\" \"npm run dev-backend\"",
+    "install-frontend": "cd frontend && npm i",
+    "install-backend": "cd backend && npm i",
+    "installer": "npm i && npm run install-backend && npm run install-frontend"
+  },
+  "keywords": [],
+  "author": "ASHUTOSH PAWAR",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
