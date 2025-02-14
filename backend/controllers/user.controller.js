@@ -189,7 +189,7 @@ module.exports = class UserController {
                         </div>
                         <div style="padding: 20px;">
                             <p style="color: #555;">Hello,</p>
-                            <p style="color: #555;">We received a request to reset your password. Click the button below to reset your password. This link will expire in 1 hour.</p>
+                            <p style="color: #555;">We received a request to reset your password. Click the button below to reset your password. This link will expire in 10 Minutes.</p>
                             <a href="${resetLink}" style="display: inline-block; padding: 10px 20px; margin: 20px 0; font-size: 16px; color: #fff; background-color: #127a45; text-decoration: none; border-radius: 5px;">Reset Password</a>
                             <p style="color: #555;">If you did not request this, please ignore this email. Your password will remain unchanged.</p>
                             <p style="color: #555;">Thank you,</p>
