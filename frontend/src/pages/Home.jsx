@@ -8,7 +8,6 @@ import UserContext from "../context/userContext";
 import ProfileCardSkeleton from "../components/ProfileCardSkeleton";
 
 const Home = () => {
-    const [data, setData] = useState(null);
     const token = localStorage.getItem("token");
     const navigate = useNavigate();
     const { user, setUser, isLoading } = useContext(UserContext);
@@ -20,16 +19,6 @@ const Home = () => {
             navigate("/");
             return;
         }
-        const fetchData = async () => {
-            const res = await UserData(token);
-            setUser(res.user);
-            if (res.message === "Invalid token") {
-                navigate("/");
-            } else {
-                setData(res);
-            }
-        };
-        fetchData();
     }, [token, navigate]);
 
     return (
