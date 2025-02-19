@@ -94,7 +94,7 @@ const Navbar = ({ user }) => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="md:hidden bg-white absolute left-0 right-0 top-16 p-6 rounded-b-lg shadow-lg"
+                    className="md:hidden bg-white z-50 absolute left-0 right-0 top-16 p-6 rounded-b-lg shadow-lg"
                 >
                     <div className="flex flex-col items-center space-y-4">
                         <Link
